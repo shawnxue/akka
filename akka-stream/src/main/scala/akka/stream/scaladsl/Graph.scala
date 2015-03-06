@@ -266,6 +266,9 @@ object FlowGraph extends GraphApply {
 
     private[stream] def module: Module = moduleInProgress
 
+    /** Converts this Scala DSL element to it's Java DSL counterpart. */
+    def asJava: javadsl.FlowGraph.Builder = new javadsl.FlowGraph.Builder()(this)
+
   }
 
   object Implicits {
